@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import Test from './components/Test'
+import { useState } from 'react'
+import Loop from './components/Loop';
 
 function App() {
+  const [items] = useState([
+    {id: 1, name: 'Mickey', description: 'Hello World'},
+    {id: 2, name: 'Goofy', description: 'React is fun!'},
+    {id: 3, name: 'Pluto', description: 'Or is it?'}
+  ])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Test />
+      <h2>This is a Loop</h2>
+      <Loop items={items} />
     </div>
   );
 }
